@@ -15,3 +15,9 @@ mymy는 크리에이터, 개발자, 혁신가를 연결하는 커뮤니티 중�
 - 📜 TypeScript (정적 타입 지정 및 향상된 개발 환경 지원)
 
 - 💅 TailwindCSS 4 (유용성 우선의 반응형 스타일링 지원)
+
+- 🔑 Clerk (Passkeys, Github, Google Sign-in을 이용한 안전한 인증)
+
+- 💾 NeonDB (제품 및 사용자 데이터 저장을 위한 서버리스 데이터베이스)
+
+- 🗄️ Drizzle (타입 안전성을 보장하는 데이터베이스 쿼리 및 마이그레이션)
