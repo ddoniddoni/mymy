@@ -1,38 +1,40 @@
+import Link from "next/link";
 import { ArrowUpRightIcon, StarIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/common/section-header";
 import ProductCard from "@/components/products/product-card";
-import Link from "next/link";
+import { getFreaturedProducts } from "@/lib/products/product-select";
 
-const featuredProducts = [
-  {
-    id: 1,
-    name: "Product 1",
-    description: "Description 1",
-    tags: ["Saas", "Pricing", "Global"],
-    votes: 615,
-    isFeatured: true,
-  },
-  {
-    id: 2,
-    name: "Product 1",
-    description: "Description 1",
-    tags: ["Saas", "Pricing", "Global"],
-    votes: 615,
-    isFeatured: true,
-  },
-  {
-    id: 3,
-    name: "Product 1",
-    description: "Description 1",
-    tags: ["Saas", "Pricing", "Global"],
-    votes: 615,
-    isFeatured: true,
-  },
-];
+// const featuredProducts = [
+//   {
+//     id: 1,
+//     name: "Product 1",
+//     description: "Description 1",
+//     tags: ["Saas", "Pricing", "Global"],
+//     votes: 615,
+//     isFeatured: true,
+//   },
+//   {
+//     id: 2,
+//     name: "Product 1",
+//     description: "Description 1",
+//     tags: ["Saas", "Pricing", "Global"],
+//     votes: 615,
+//     isFeatured: true,
+//   },
+//   {
+//     id: 3,
+//     name: "Product 1",
+//     description: "Description 1",
+//     tags: ["Saas", "Pricing", "Global"],
+//     votes: 615,
+//     isFeatured: true,
+//   },
+// ];
 
-export default function FeaturedProducts() {
+export default async function FeaturedProducts() {
+  const featuredProducts = await getFreaturedProducts();
   return (
     <section className="py-20 bg-muted/20">
       <div className="wrapper">
