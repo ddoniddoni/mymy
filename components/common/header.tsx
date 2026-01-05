@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CustomUserButton from "./custom-user-button";
+import ClientAuthArea from "./client-auth-area";
 
 const Logo = () => {
   return (
@@ -68,7 +69,7 @@ export default function Header() {
                     Submit Project
                   </Link>
                 </Button>
-                <CustomUserButton />
+                <ClientAuthArea />
               </SignedIn>
             </Suspense>
           </div>

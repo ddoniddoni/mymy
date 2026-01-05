@@ -30,7 +30,6 @@ export async function getAllProducts() {
     .select()
     .from(products)
     .orderBy(desc(products.voteCount));
-
   return productsData;
 }
 
