@@ -7,18 +7,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDownIcon, ChevronUpIcon, StarIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { StarIcon } from "lucide-react";
 import { InferSelectModel } from "drizzle-orm";
 import { products } from "@/db/schema";
+import VotingButtons from "./voting-buttons";
 
 type Product = InferSelectModel<typeof products>;
 
 export default function ProductCard({ product }: { product: Product }) {
   const hasVoted = false;
   return (
-    <Link href={`/products/${product.id}`}>
+    <Link href={`/products/${product.slug}`}>
       <Card className="group card-hover hover:bg-primary-foreground/10 border-solid border-gray-400 min-h-50">
         <CardHeader className="flex-1">
           <div className="flex items-start gap-4">
@@ -35,36 +34,11 @@ export default function ProductCard({ product }: { product: Product }) {
               </div>
               <CardDescription>{product.description}</CardDescription>
             </div>
-            {/** Voting Buttons**/}
-            <div className="flex flex-col items-center gap-1 shrink-0">
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                className={cn(
-                  "h-8 w-8 text-primary",
-                  hasVoted
-                    ? "bg-primary/10 text-primary hover:bg-primary/20"
-                    : "hover:bg-primary/10 hover:text-primary"
-                )}
-              >
-                <ChevronUpIcon className="size-5" />
-              </Button>
-              <span className="text-sm font-semibold transition-colors text-foreground">
-                {product.voteCount}
-              </span>
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                className={cn(
-                  "h-8 w-8 text-primary",
-                  hasVoted
-                    ? "hover:text-destructive"
-                    : "opacity-50 cursor-not-allowed"
-                )}
-              >
-                <ChevronDownIcon className="size-5" />
-              </Button>
-            </div>
+            <VotingButtons
+              hasVoted={hasVoted}
+              voteCount={product.voteCount}
+              productId={product.id}
+            />
           </div>
         </CardHeader>
         <CardFooter>

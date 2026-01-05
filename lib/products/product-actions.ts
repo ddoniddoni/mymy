@@ -3,9 +3,11 @@
 import { db } from "@/db";
 import { products } from "@/db/schema";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import z from "zod";
+import z, { success } from "zod";
 import { productSchema } from "./product-validation";
 import { FormState } from "@/types";
+import { eq, sql } from "drizzle-orm";
+import { refresh, revalidatePath } from "next/cache";
 
 export const addProductAction = async (
   prevState: FormState,
@@ -85,6 +87,94 @@ export const addProductAction = async (
       success: false,
       errors: undefined,
       message: "Failed to submit product",
+    };
+  }
+};
+
+export const upvoteProductAction = async (productId: number) => {
+  try {
+    const { userId, orgId } = await auth();
+
+    if (!userId) {
+      return {
+        success: false,
+        message: "You must be signed in to submit a product",
+        errors: undefined,
+      };
+    }
+
+    if (!orgId) {
+      return {
+        success: false,
+        message: "You must be a member of an organization to submit a product",
+        errors: undefined,
+      };
+    }
+
+    await db
+      .update(products)
+      .set({
+        voteCount: sql`GREATEST(0, vote_count + 1)`,
+      })
+      .where(eq(products.id, productId));
+
+    revalidatePath("/");
+
+    return {
+      success: true,
+      message: "Product upvoted successfully!",
+    };
+  } catch (error) {
+    console.error(error);
+
+    return {
+      success: false,
+      error: error,
+      message: "Failed to upvote product",
+    };
+  }
+};
+
+export const downvoteProductAction = async (productId: number) => {
+  try {
+    const { userId, orgId } = await auth();
+
+    if (!userId) {
+      return {
+        success: false,
+        message: "You must be signed in to submit a product",
+        errors: undefined,
+      };
+    }
+
+    if (!orgId) {
+      return {
+        success: false,
+        message: "You must be a member of an organization to submit a product",
+        errors: undefined,
+      };
+    }
+
+    await db
+      .update(products)
+      .set({
+        voteCount: sql`GREATEST(0, vote_count -1)`,
+      })
+      .where(eq(products.id, productId));
+
+    revalidatePath("/");
+
+    return {
+      success: true,
+      message: "Product downvoted successfully!",
+    };
+  } catch (error) {
+    console.error(error);
+
+    return {
+      success: false,
+      error: error,
+      message: "Failed to downvote product",
     };
   }
 };

@@ -6,7 +6,7 @@ import { ArrowUpRightIcon, StarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/common/section-header";
 import ProductCard from "@/components/products/product-card";
-import { getFreaturedProducts } from "@/lib/products/product-select";
+import { getFeaturedProducts } from "@/lib/products/product-select";
 
 // const featuredProducts = [
 //   {
@@ -36,7 +36,7 @@ import { getFreaturedProducts } from "@/lib/products/product-select";
 // ];
 
 export default async function FeaturedProducts() {
-  const featuredProducts = await getFreaturedProducts();
+  const featuredProducts = await getFeaturedProducts();
   return (
     <section className="py-20 bg-muted/20">
       <div className="wrapper">
