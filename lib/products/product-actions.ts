@@ -5,12 +5,7 @@ import { products } from "@/db/schema";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import z from "zod";
 import { productSchema } from "./product-validation";
-
-type FormState = {
-  success: boolean;
-  error?: Record<string, string[]>;
-  message: string;
-};
+import { FormState } from "@/types";
 
 export const addProductAction = async (
   prevState: FormState,

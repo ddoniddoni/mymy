@@ -19,7 +19,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const hasVoted = false;
   return (
     <Link href={`/products/${product.id}`}>
-      <Card className="group card-hover hover:bg-primary-foreground/10 border-solid border-gray-400 min-h-45">
+      <Card className="group card-hover hover:bg-primary-foreground/10 border-solid border-gray-400 min-h-50">
         <CardHeader className="flex-1">
           <div className="flex items-start gap-4">
             <div className="flex-1 min-w-0">

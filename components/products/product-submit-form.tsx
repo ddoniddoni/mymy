@@ -4,10 +4,11 @@ import { FormField } from "@/components/forms/form-field";
 import { Button } from "@/components/ui/button";
 import { addProductAction } from "@/lib/products/product-actions";
 import { cn } from "@/lib/utils";
+import { FormState } from "@/types";
 import { Loader2Icon, SparklesIcon } from "lucide-react";
 import { useActionState } from "react";
 
-const initialState: any = {
+const initialState: FormState = {
   success: false,
   errors: undefined,
   message: "",
