@@ -9,7 +9,6 @@ import {
   SparklesIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CustomUserButton from "./custom-user-button";
 import ClientAuthArea from "./client-auth-area";
 
 const Logo = () => {
@@ -19,7 +18,7 @@ const Logo = () => {
         <SparkleIcon className="size-4 text-primary-foreground" />
       </div>
       <span className="text-xl font-bolad">
-        m<span className="text-primary">ym</span>y
+        <span className="text-primary">my</span>my
       </span>
     </Link>
   );
@@ -37,14 +36,14 @@ export default function Header() {
               className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:bg-muted/50"
             >
               <HomeIcon className="size-4" />
-              <span>Home</span>
+              <span>홈</span>
             </Link>
             <Link
               href="/explore"
               className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:bg-muted/50"
             >
               <CompassIcon className="size-4" />
-              <span>Explore</span>
+              <span>탐색</span>
             </Link>
           </nav>
 
@@ -57,16 +56,19 @@ export default function Header() {
               }
             >
               <SignedOut>
-                <SignInButton />
+                <SignInButton>
+                  <Button variant="ghost">로그인</Button>
+                </SignInButton>
                 <SignUpButton>
-                  <Button>Sign Up</Button>
+                  <Button>회원가입</Button>
                 </SignUpButton>
               </SignedOut>
+
               <SignedIn>
                 <Button asChild>
                   <Link href="/submit">
                     <SparklesIcon className="size-4" />
-                    Submit Project
+                    프로젝트 등록
                   </Link>
                 </Button>
                 <ClientAuthArea />

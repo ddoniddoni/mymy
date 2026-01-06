@@ -12,9 +12,9 @@ export default async function ExplorePage() {
       <div className="wrapper">
         <div className="mb-12">
           <SectionHeader
-            title="Explore All Products"
+            title="프로젝트 둘러보기"
             icon={CompassIcon}
-            description="Browse and disc over amazing projects from our cummunity"
+            description="커뮤니티의 다양한 프로젝트를 탐색해보세요"
           />
         </div>
         <ProductExplorer products={products} />

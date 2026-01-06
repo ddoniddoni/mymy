@@ -38,9 +38,9 @@ export default async function AdminPage() {
       <div className="wrapper">
         <div className="mb-12">
           <SectionHeader
-            title="Product Admin"
+            title="프로젝트 관리자"
             icon={ShieldIcon}
-            description="Review and manage submitted products"
+            description="등록된 프로젝트를 검토하고 관리합니다."
           />
         </div>
         <StatsCard
@@ -53,13 +53,13 @@ export default async function AdminPage() {
         <section className="my-12">
           <div className="section-header-with-count">
             <h2 className="text-2xl font-bold">
-              Pending Products ({pendingProducts.length})
+              검토중인 프로젝트 ({pendingProducts.length})
             </h2>
           </div>
           <div className="space-y-4">
             {pendingProducts.length === 0 && (
               <EmptyState
-                message="No pending products to review"
+                message="검토중인 프로젝트가 없습니다."
                 icon={InboxIcon}
               />
             )}
@@ -71,7 +71,7 @@ export default async function AdminPage() {
 
         <section className="my-12">
           <div className="section-header-with-count">
-            <h2 className="text-2xl font-bold">All Products</h2>
+            <h2 className="text-2xl font-bold">모든 프로젝트</h2>
           </div>
           <div className="space-y-4">
             {allProducts.map((product) => (

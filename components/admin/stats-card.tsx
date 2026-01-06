@@ -13,22 +13,22 @@ export default function StatsCard({
 }) {
   const stats = [
     {
-      label: "Total",
+      label: "전체",
       count: all,
       color: "bg-primary/10",
     },
     {
-      label: "Pending",
+      label: "대기",
       count: pending,
       color: "bg-yellow-500/10",
     },
     {
-      label: "Approved",
+      label: "승인",
       count: approved,
       color: "bg-green-500/10",
     },
     {
-      label: "Rejected",
+      label: "반려",
       count: rejected,
       color: "bg-red-500/10",
     },

@@ -55,7 +55,7 @@ export default function ProductExplorer({
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
           <Input
             type="text"
-            placeholder="Search products..."
+            placeholder="프로젝트 검색..."
             className="pl-10"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -68,21 +68,21 @@ export default function ProductExplorer({
             onClick={() => setSortBy("trending")}
           >
             <TrendingUpIcon className="size-4" />
-            Trending
+            인기순
           </Button>
           <Button
             variant={sortBy === "recent" ? "default" : "outline"}
             onClick={() => setSortBy("recent")}
           >
             <ClockIcon className="size-4" />
-            Recent
+            최신순
           </Button>
         </div>
       </div>
 
       <div className="mb-6">
         <p className="text-sm text-muted-foreground">
-          Showing {filteredProducts.length} products
+          총 {filteredProducts.length}개 프로젝트
         </p>
       </div>
 

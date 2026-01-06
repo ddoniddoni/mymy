@@ -73,9 +73,7 @@ export default function HeroSection() {
           text-muted-foreground mb-10 max-w-2xl
           leading-relaxed"
           >
-            앱, AI 도구, SaaS 제품 및 창작 프로젝트를 선보일 수 있는 크리에이터
-            커뮤니티 플랫폼입니다. 진정한 출시, 실제 개발자, 진솔한 피드백을
-            만나보세요.
+            창작 프로젝트를 선보일 수 있는 크리에이터 커뮤니티 플랫폼입니다.
           </p>
           <div
             className="flex flex-col sm:flex-row

@@ -10,12 +10,12 @@ export default function CustomUserButton() {
   return (
     <UserButton>
       <UserButton.UserProfilePage
-        label="Organizations"
+        label="조직"
         labelIcon={<BuildingIcon className="size-4" />}
         url="/organizations"
       >
         <div className="p-4">
-          <h2>Manage Organization</h2>
+          <h2 className="text-sm font-semibold mb-2">조직 관리</h2>
           <OrganizationSwitcher
             hidePersonal={true}
             afterCreateOrganizationUrl={"/submit"}
@@ -28,16 +28,17 @@ export default function CustomUserButton() {
           />
         </div>
       </UserButton.UserProfilePage>
+
       <UserButton.UserProfilePage
-        label="Admin"
+        label="관리자"
         labelIcon={<Building2Icon className="size-4" />}
-        url="admin"
+        url="/admin"
       >
         <div className="p-4">
-          <h2>Admin Panel</h2>
+          <h2 className="text-sm font-semibold mb-2">관리자 패널</h2>
           <Link href="/admin" className="w-full justify-start">
             <Button size="default" className="w-full justify-start">
-              Go to Admin Panel
+              관리자 페이지로 이동
             </Button>
           </Link>
         </div>

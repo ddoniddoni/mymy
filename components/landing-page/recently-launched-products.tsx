@@ -11,9 +11,9 @@ export default async function RecentlyLaunchedProducts() {
     <section className="py-20">
       <div className="wrapper space-y-12">
         <SectionHeader
-          title="Recently Launched"
+          title="최근 출시된 프로젝트"
           icon={RocketIcon}
-          description="Discover the latest products from our community"
+          description="커뮤니티에서 새롭게 공개된 최신 프로젝트들을 만나보세요"
         />
 
         {recentlyLaunchedProducts.length > 0 ? (
@@ -24,7 +24,7 @@ export default async function RecentlyLaunchedProducts() {
           </div>
         ) : (
           <EmptyState
-            message="No products launched in the last week. Check back soon for new launches."
+            message="최근 일주일 내에 출시된 프로젝트가 없습니다. 곧 새로운 프로젝트를 만나보세요."
             icon={CalendarIcon}
           />
         )}

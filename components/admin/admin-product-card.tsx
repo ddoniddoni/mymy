@@ -57,7 +57,7 @@ export default function AdminProductCard({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Visit Website
+                  사이트 방문하기
                 </a>
               </p>
             </div>

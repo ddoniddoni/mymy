@@ -8,33 +8,6 @@ import SectionHeader from "@/components/common/section-header";
 import ProductCard from "@/components/products/product-card";
 import { getFeaturedProducts } from "@/lib/products/product-select";
 
-// const featuredProducts = [
-//   {
-//     id: 1,
-//     name: "Product 1",
-//     description: "Description 1",
-//     tags: ["Saas", "Pricing", "Global"],
-//     votes: 615,
-//     isFeatured: true,
-//   },
-//   {
-//     id: 2,
-//     name: "Product 1",
-//     description: "Description 1",
-//     tags: ["Saas", "Pricing", "Global"],
-//     votes: 615,
-//     isFeatured: true,
-//   },
-//   {
-//     id: 3,
-//     name: "Product 1",
-//     description: "Description 1",
-//     tags: ["Saas", "Pricing", "Global"],
-//     votes: 615,
-//     isFeatured: true,
-//   },
-// ];
-
 export default async function FeaturedProducts() {
   const featuredProducts = await getFeaturedProducts();
   return (
@@ -48,7 +21,7 @@ export default async function FeaturedProducts() {
           />
           <Button variant="outline" asChild className="hidden sm:flex">
             <Link href="/explore">
-              View All <ArrowUpRightIcon className="size-4" />
+              모두 보기 <ArrowUpRightIcon className="size-4" />
             </Link>
           </Button>
         </div>

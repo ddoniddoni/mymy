@@ -47,7 +47,7 @@ export default async function Product({
           href="/explore"
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
         >
-          <ArrowLeftIcon className="size-4" /> Back to Explore
+          <ArrowLeftIcon className="size-4" /> 돌아가기
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -78,7 +78,7 @@ export default async function Product({
             </div>
 
             <div className="border rounded-lg p-6 bg-primary/10">
-              <h2 className="text-lg font-semibold mb-4">Product Details</h2>
+              <h2 className="text-lg font-semibold mb-4">Detail Project</h2>
 
               <div className="space-y-3">
                 {[
@@ -109,14 +109,14 @@ export default async function Product({
               <div className="border rounded-lg p-6 bg-background">
                 <div className="text-center mb-6">
                   <p className="text-sm text-muted-foreground mb-2">
-                    Support this product
+                    프로젝트 지원하기
                   </p>
                   <VotingButtons productId={product.id} voteCount={voteCount} />
                 </div>
                 {voteCount > 100 && (
                   <div className="pt-6 border-t">
                     <Badge className="w-full justify-center py-2">
-                      🔥 Featured Product
+                      🔥 추천 프로젝트
                     </Badge>
                   </div>
                 )}
@@ -132,7 +132,7 @@ export default async function Product({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Visit Website <ExternalLinkIcon className="size-4 ml-2" />
+                    Site 방문하기 <ExternalLinkIcon className="size-4 ml-2" />
                   </a>
                 </Button>
               )}

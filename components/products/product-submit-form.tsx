@@ -43,41 +43,43 @@ export default function ProductSubmitForm() {
           {message}
         </div>
       )}
+
       <FormField
-        label="Product Name"
+        label="프로젝트명"
         name="name"
         id="name"
-        placeholder="My Awesome Product"
+        placeholder="나의 멋진 프로젝트"
         required
         onChange={() => {}}
         error={getFieldErrors("name")}
       />
+
       <FormField
-        label="Slug"
+        label="슬러그"
         name="slug"
         id="slug"
         placeholder="my-awesome-product"
         required
         onChange={() => {}}
-        helperText="URL-friendly version of your product name"
+        helperText="프로젝트를 기반으로 한 URL용 식별자입니다"
         error={getFieldErrors("slug")}
       />
 
       <FormField
-        label="Tagline"
+        label="한 줄 소개"
         name="tagline"
         id="tagline"
-        placeholder="A brief, catchy description"
+        placeholder="간단하고 인상적인 설명"
         required
         onChange={() => {}}
         error={getFieldErrors("tagline")}
       />
 
       <FormField
-        label="Description"
+        label="상세 설명"
         name="description"
         id="description"
-        placeholder="Tell us more about your product..."
+        placeholder="프로젝트에 대해 자세히 설명해주세요..."
         required
         onChange={() => {}}
         error={getFieldErrors("description")}
@@ -85,24 +87,25 @@ export default function ProductSubmitForm() {
       />
 
       <FormField
-        label="Website URL"
+        label="웹사이트 URL"
         name="websiteUrl"
         id="websiteUrl"
         placeholder="https://yourproduct.com"
         required
         onChange={() => {}}
         error={getFieldErrors("websiteUrl")}
-        helperText="Enter your product's website or landing page"
+        helperText="프로젝트의 공식 웹사이트 또는 랜딩 페이지 주소를 입력하세요"
       />
+
       <FormField
-        label="Tags"
+        label="태그"
         name="tags"
         id="tags"
-        placeholder="AI, Productivity, SaaS"
+        placeholder="AI, 생산성, SaaS"
         required
         onChange={() => {}}
         error={getFieldErrors("tags")}
-        helperText="Comma-separated tags (e.g., AI, SaaS, Productivity)"
+        helperText="쉼표(,)로 구분하여 입력하세요 (예: AI, SaaS, 생산성)"
       />
 
       <Button type="submit" size="lg" className="w-full">
@@ -111,7 +114,7 @@ export default function ProductSubmitForm() {
         ) : (
           <>
             <SparklesIcon className="size-4" />
-            Submit Product
+            프로젝트 등록하기
           </>
         )}
       </Button>
