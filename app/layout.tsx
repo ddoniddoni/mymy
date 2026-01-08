@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import { ClerkProvider } from "@clerk/nextjs";
+import FallingEffect from "@/components/common/falling-effect";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${outfit.className} antialiased`}>
+          <FallingEffect />
           <Header />
           {children}
           <Footer />
